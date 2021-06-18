@@ -7,10 +7,18 @@ import {
   Text,
   Button,
   Icon,
+  useToast,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
+import { useState as useHookState } from '@hookstate/core';
+import store from '../../store';
 
 export default function LandingPageCallToAction() {
+  const { userDetails } = useHookState(store);
+
+  const toast = useToast();
+
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -41,11 +49,29 @@ export default function LandingPageCallToAction() {
             bg={'red.400'}
             _hover={{ bg: 'red.500' }}
           >
-            See demo <ExternalLinkIcon mx="4px" />
+            See demo <ExternalLinkIcon mx={2} />
           </Button>
-          <Button rounded={'full'} px={6}>
-            Go to dashboard
-          </Button>
+          {userDetails.get() ? (
+            <Button rounded={'full'} px={6} as={Link} to={'/dashboard'}>
+              Go to dashboard
+            </Button>
+          ) : (
+            <Button
+              rounded={'full'}
+              px={6}
+              onClick={() =>
+                toast({
+                  title: 'Not authenticated',
+                  description: 'Please log in first!',
+                  status: 'error',
+                  duration: 9000,
+                  isClosable: true,
+                })
+              }
+            >
+              Go to dashboard
+            </Button>
+          )}
         </Stack>
         <Flex w={'full'}>
           <Illustration
