@@ -6,7 +6,6 @@ A SaaS (Software as a Service) app to allow individuals to host their own sharea
 
 - [Getting Started](#getting-started)
 - [Built With](#built-with)
-- [Contributing](#contributing)
 
 ## Getting Started
 
@@ -107,9 +106,3 @@ REACT_APP_STRIPE_PRICE_ID =
 - [React.js](https://reactjs.org/) - Front-end web library
 - [Chakra UI](https://chakra-ui.com/) - Simple component library
 - [Heroku](https://www.heroku.com/) - Cloud application platform
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
