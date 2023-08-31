@@ -16,12 +16,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 A step by step series of examples that tell you how to get a development env running.
 
-#### Clone
-
-```sh
-$ git clone https://github.com/aahmad4/Whats-On-Ur-Mind
-```
-
 #### Installation
 
 Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to install the required packages for the React app.
